@@ -1,0 +1,17 @@
+<ng-select
+  [virtualScroll]="true"
+  class="form-group--elm"
+  [items]="repos$ | async"
+  [trackByFn]="trackByIdFunc"
+  [loading]="reposLoading"
+  [typeahead]="reposInput$"
+  [ngModel]="repo"
+  (change)="selectionChanged($event)"
+  bindValue="name"
+  bindLabel="name"
+></ng-select>
+
+<br>
+Selected repo: {{repo}}
+<br>
+Selected repo JSON: {{repo | json}}
